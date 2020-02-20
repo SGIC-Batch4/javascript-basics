@@ -1,0 +1,114 @@
+<html>
+<head>
+	<title>Courses</title>
+</head>
+
+<style>
+.yellow-container{
+	background-color:yellow;
+	border:solid red 5px;
+	padding:50px 30px;
+}
+
+.grey-container{
+	background-color:grey;
+	border:solid black 5px;
+	padding:50px 30px;
+}
+
+.grey-container table tbody tr td{
+	border:solid black 2px;
+
+	}
+
+.grey-container table thead{
+	color:yellow;
+
+	}
+
+.img-icon{
+	width:150px;
+	height:150px;
+}
+
+</style>
+
+<body>
+
+<div class="yellow-container">
+	<h4>Course we provide </h4>
+	<div id="course-list">
+		
+		
+	</div>
+
+</div>
+
+<div class="grey-container">
+<h4>Course Details</h4>
+
+<table>
+	<thead>	
+		<tr>
+			<th>Course Name</th>
+			<th>Fees</th>
+			<th>Duration</th>
+		</tr>
+	</thead>
+	<tbody id="course-details">
+		
+		
+	</tbody>
+</table>
+</div>
+
+<script>
+
+let courses=[
+	{
+		courseName:'java',
+		photoURL:'https://cdn.iconscout.com/icon/free/png-256/java-60-1174953.png',
+		fees:'20,000',
+		duration:'4 months'
+	},
+	{
+		courseName:'php',
+		photoURL:'https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/2132470731553750209-256.png',
+		fees:'15,000',
+		duration:'3 months'
+	},
+	{
+		courseName:'nodejs',
+		photoURL:'https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png',
+		fees:'15,000',
+		duration:'3 months'
+	},
+	{
+		courseName:'Microsoft .Net',
+		photoURL:'https://static1.squarespace.com/static/5a93e660b98a781a570f1baa/t/5b685a528a922db3bb7e52a0/1536903255261/blubird-job-dot-net-developer.png?format=1500w',
+		fees:'25,000',
+		duration:'4 months'
+	}
+];
+
+let imgstr='';
+let courseDetailStr='';
+for(i=0;i<courses.length;i++){
+imgstr=imgstr+`<img class='img-icon' src='${courses[i].photoURL}'/>`;
+courseDetailStr=courseDetailStr+
+		`
+		<tr>
+			<td>${courses[i].courseName}</td>
+			<td>${courses[i].fees}</td>
+			<td>${courses[i].duration}</td>
+		</tr>
+		`;
+}
+
+
+document.getElementById("course-list").innerHTML=imgstr;
+document.getElementById("course-details").innerHTML=courseDetailStr;
+</script>
+
+</body>
+</html>
